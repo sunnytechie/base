@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Raleway&display=swap');
+
+p, span, label, a, div, small, input, button, .btn {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.change-bg {
+    background: #191C24;
+}
+
+
+
+
+
+
+/* Leave the bottom */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: all 5000s ease-in-out 0s !important;
+    transition-property: background-color, color;
+}
