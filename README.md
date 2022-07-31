@@ -1,38 +1,30 @@
-# Laravel Starter Kit (Inertia-SSR - Vue3 - Bootstrap 5)
+# Base
+This application is developed by Sunday Afoka Chinedu.
 
-Use this starter kit to develop with Laravel 9 setup InertiaJs with Server Side Rendering (SSR), Vue Js 3 and Bootstrap 5
+Base a web based application that stores data online for easy access... The conscept of this application is designed by Mr Joshua Emma.
 
-## Support me
+## Teck stack used on this project
+* Laravel 9
+* Vue.js 3
+* Inertia.js
+* Bootstrap 5
+* HTML and CSS
 
-<a href='https://ko-fi.com/J3J4BZD4N' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+## Connect with me on Linkedin
+https://www.linkedin.com/in/sunday-afoka-chinedu-82223595
+https//www.fortcan.com
 
 ## Requirements
-
 * PHP 8.0 or latest
 * Node 14 or latest
 
-## How to start 
-<b>To use roles & permissions: select the branch "Branch_with_roles_permissions"</b>
-
-Clone the repo https://github.com/souravtah/Laravel9-Inertia-ssr-bootstrap5-starter-kit.git
+## How to use
+Clone the repo https://github.com/sunnytechie/Adilo.git
 ```bash
-$ cp .env.example .env # setup your database
+$ cp .env.example .env # setting up database is optional
 $ composer install
 $ php artisan key:gen
 $ npm install
 $ npm run dev # optional only if any changes you make in resource/js
-$ php artisan migrate --seed
-$ php artisan serve
-```
-
-## Compile Assets
-
-```bash
-$ npm run dev
-```
-
-or
-
-```bash
-$ npm run watch
+$ npx mix watch # optional only if you want to lookout for any changes you make in resource/js
 ```
