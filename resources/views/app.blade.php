@@ -13,12 +13,18 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+        <!-- Favicon -->
+        <link rel="icon" href="{{ asset('assets/images/favicon_mj.png') }}">
+
+        {{-- Custom css --}}
+        <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+
         <!-- Scripts -->
         @routes
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="bg-light">
+    <body style="background: #1B2434; color:rgb(255, 253, 253)">
         @inertia
 
         @env ('local')
