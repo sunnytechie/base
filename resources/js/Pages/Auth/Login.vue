@@ -1,7 +1,8 @@
 <template>
   <Head title="Log in" />
 
-  <div class="card-body">
+  
+  <div class="card-body" style="background: #212B3E">
 
     <breeze-validation-errors class="mb-3" />
 
@@ -47,6 +48,7 @@
       </div>
     </form>
   </div>
+
 </template>
 
 <script>
@@ -100,3 +102,18 @@ export default {
   }
 }
 </script>
+
+<style>
+  .card {
+    background: #212B3E;
+  }
+
+  #email, #password {
+    border: none;
+    border-radius: 4px;
+    background: #1B2535;
+    padding-right: 28px;
+  }
+
+  #email:focus, #password:focus {  background: transparent; color: #fff; }
+</style>

@@ -19,6 +19,9 @@
         {{-- Custom css --}}
         <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
+        {{-- Bootstrap Icon --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
         <!-- Scripts -->
         @routes
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
@@ -30,5 +33,12 @@
         @env ('local')
             <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
         @endenv
+
+        <script>
+            var form = document.getElementById('form');
+            form.addEventListener('submit', function(e) {
+                alert('form submitted');
+            });
+        </script>
     </body>
 </html>

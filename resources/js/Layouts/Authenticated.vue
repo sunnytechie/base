@@ -19,8 +19,7 @@
     <!-- Modal -->
     <Modal />
 
-    <!-- Modal2 -->
-    <Modal2 />
+   
 
     <!-- Ofcanvas -->
     <Sidebar />
@@ -38,7 +37,6 @@ import { Inertia } from '@inertiajs/inertia'
 import Nav from '../Pages/Shared/Nav.vue'
 import Footer from '../Pages/Shared/Footer.vue'
 import Modal from '../Pages/Shared/Modal.vue'
-import Modal2 from '../Pages/Shared/Modal2.vue'
 import Sidebar from '../Pages/Shared/Sidebar.vue'
 
 export default {
@@ -51,7 +49,6 @@ export default {
     Nav,
     Footer,
     Modal,
-    Modal2,
     Sidebar,
   },
 
