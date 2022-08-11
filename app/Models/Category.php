@@ -12,4 +12,18 @@ class Category extends Model
     protected $fillable = [
         'user_id', 'title', 'type', 'icon'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    //has many base
+    public function bases()
+    {
+        return $this->hasMany('App\Models\Base');
+    }
+
 }
+
+

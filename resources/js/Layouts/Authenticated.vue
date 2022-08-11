@@ -1,12 +1,6 @@
 <template>
   <section>
     <Nav />
-    <!-- Page Heading -->
-    <!-- <header class="d-flex py-3 bg-white shadow-sm border-bottom">
-      <div class="container">
-        <slot name="header" />
-      </div>
-    </header> -->
 
     <!-- Page Content -->
     <section>
@@ -15,10 +9,6 @@
 
     <!-- Footer -->
     <Footer />
-
-    <!-- Modal -->
-    <Modal />
-
    
 
     <!-- Ofcanvas -->
@@ -36,7 +26,6 @@ import { Link } from '@inertiajs/inertia-vue3'
 import { Inertia } from '@inertiajs/inertia'
 import Nav from '../Pages/Shared/Nav.vue'
 import Footer from '../Pages/Shared/Footer.vue'
-import Modal from '../Pages/Shared/Modal.vue'
 import Sidebar from '../Pages/Shared/Sidebar.vue'
 
 export default {
@@ -48,7 +37,6 @@ export default {
     Link,
     Nav,
     Footer,
-    Modal,
     Sidebar,
   },
 

@@ -13,12 +13,12 @@
     <form @submit.prevent="submit">
       <div class="mb-3">
         <breeze-label for="email" value="Email" />
-        <breeze-input id="email" type="email" v-model="form.email" required autofocus />
+        <input class="form-control" style="padding: 6px 8px; border-radius: 0; font-size: 12px; background-color: #1B2434; color: #fff;" id="email" type="email" v-model="form.email" required autofocus />
       </div>
 
       <div class="mb-3">
         <breeze-label for="password" value="Password" />
-        <breeze-input id="password" type="password" v-model="form.password" required autocomplete="current-password" />
+        <input class="form-control" style="padding: 6px 8px; border-radius: 0; font-size: 12px; background-color: #1B2434; color: #fff;" id="password" type="password" v-model="form.password" required autocomplete="current-password" />
       </div>
 
       <div class="mb-3">

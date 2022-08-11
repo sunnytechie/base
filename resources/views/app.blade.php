@@ -26,6 +26,21 @@
         @routes
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
+
+        <style>
+            /* .tox .tox-menubar {
+                background-color: #f5f5f5;
+            } */
+            .tox-tinymce {
+                border: 0 !important;
+                border-right: 0 !important;
+            }
+
+            .tox .tox-statusbar {
+                background-color: #1B2434 !important;
+                border: 0 !important;
+            }
+        </style>
     </head>
     <body style="background: #1B2434; color:rgb(255, 253, 253)">
         @inertia
@@ -34,11 +49,8 @@
             <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
         @endenv
 
-        <script>
-            var form = document.getElementById('form');
-            form.addEventListener('submit', function(e) {
-                alert('form submitted');
-            });
-        </script>
+        {{-- Tiny mce js --}}
+        <script src="{{ asset('js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
+        
     </body>
 </html>
