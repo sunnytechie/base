@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Inertia\Inertia;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class StructureController extends Controller
@@ -21,6 +22,8 @@ class StructureController extends Controller
     {
         //get request data
         //$data = $request->all();
+        //get list of categories
+        $categories = Category::all();
 
         if ($request->password == 'true') {
             $password = "true";
@@ -65,6 +68,7 @@ class StructureController extends Controller
             'projects' => $projects,
             'land' => $land,
             'image' => $image,
+            'categories' => $categories,
         ]);
     }
 }

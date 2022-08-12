@@ -42,6 +42,12 @@
 
                             <div class="default">
                                 <h5 class="d-flex justify-content-end">Document</h5>
+                                
+                                select list of categories
+                                <select class="form-control" v-model="form.category_id">
+                                    <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.title }}</option>
+                                </select>
+                                
                                 <div class="form-group mb-3">
                                     <label for="">Title</label>
                                     <input placeholder="heading of this document" type="text" v-model="form.title" class="form-control" style="padding: 6px 8px; border-radius: 0; font-size: 12px; background-color: #1B2434; color: #fff;" required>
@@ -214,7 +220,7 @@
 
                                     <div class="form-group">
                                       <label for="my-input">Event Image</label>
-                                      <input id="my-input" class="form-control" type="file" @change="form.event_image">
+                                      <input id="my-input" class="form-control" type="file" @input="form.event_image = $event.target.files[0]">
                                     </div>
                                 
                             </div>
@@ -234,8 +240,14 @@
                               Image
                             </div> -->
 
+                            <div class="form-group">
+                              <progress v-if="form.progress" :value="form.progress.percentage" max="100">
+                                {{ form.progress.percentage }}%
+                              </progress>
+                            </div>
+
                             <div class="form-group my-4 d-flex justify-content-end">
-                                <button class="btn btn-success" type="submit">Publish</button>
+                                <button style="color: #fff" class="btn btn-success" type="submit"><span class="mx-1"><i class="bi bi-cloud-arrow-up"></i></span> Publish</button>
                             </div>
                         </form>
                     </div>
@@ -296,7 +308,8 @@ export default {
       event_time: '',
       event_location: '',
       event_description: 'Write something here...',
-      event_image: '',
+      event_image: null,
+      category_id: '',
 
     })
     return {
@@ -310,6 +323,7 @@ export default {
     projects: Object,
     land: Object,
     image: Object,
+    categories: Array,
     },  
 }
 </script>
