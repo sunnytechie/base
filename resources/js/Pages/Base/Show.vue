@@ -107,7 +107,7 @@ export default {
   },
 
   props: {
-    base: Array,
+    base: Object,
   },
 }
 </script>

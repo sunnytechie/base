@@ -146,6 +146,7 @@ import { Head, Link, useForm } from '@inertiajs/inertia-vue3'
 import { Inertia } from '@inertiajs/inertia'
 import IconList from '../Shared/Icon.vue'
 import Version from '../Shared/Version.vue'
+import SecondNav from '../Shared/Nav2.vue'
 
 
     export default {
@@ -155,6 +156,7 @@ import Version from '../Shared/Version.vue'
             Link,
             Version,
             IconList,
+            SecondNav
         },
 
         setup(props) {

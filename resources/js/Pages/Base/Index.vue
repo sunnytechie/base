@@ -2,6 +2,71 @@
     <Head title="Dashboard" />
     
     <breeze-authenticated-layout>
+    <section class="nav-2">
+        <div class="nav container d-flex justify-content-between">
+            <nav>
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link active-btn" href="#">
+                            <svg style="margin-top: -4px; margin-right: 6px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door mx-1" viewBox="0 0 16 16">
+                                <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+                              </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                
+                    <li v-for="category in defaultCategories" :key="category.id" class="nav-item">
+                        <Link class="nav-link" :href="route('select.index', category.id)">
+                              <i :class="category.icon" style="margin-top: -4px; margin-right: 6px"></i>
+                              <span>{{ category.title }}</span>
+                        </Link>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="mx-1">More</span>
+                         <i class="bi bi-arrow-down-short" style="margin-right: 6px"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li v-for="category in createdCategories" :key="category.id">
+                            <Link class="dropdown-item" :href="route('select.index', category.id)">
+                                <i :class="category.icon" style="margin-top: -4px; margin-right: 6px"></i>
+                                <span>{{ category.title }}</span>
+                            </Link>
+                          </li>
+
+
+                          <li>
+                            <Link class="dropdown-item" href="/settings">
+                              <svg style="margin-top: -4px; margin-right: 6px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-node-plus mx-1" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M11 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM6.025 7.5a5 5 0 1 1 0 1H4A1.5 1.5 0 0 1 2.5 10h-1A1.5 1.5 0 0 1 0 8.5v-1A1.5 1.5 0 0 1 1.5 6h1A1.5 1.5 0 0 1 4 7.5h2.025zM11 5a.5.5 0 0 1 .5.5v2h2a.5.5 0 0 1 0 1h-2v2a.5.5 0 0 1-1 0v-2h-2a.5.5 0 0 1 0-1h2v-2A.5.5 0 0 1 11 5zM1.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
+                                </svg>
+                              <span>Add more section</span>
+                            </Link>
+                          </li>
+
+                          
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <form class="d-flex">
+                            <input style="color: #F9FBFC" class="form-control search mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                              </svg>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+
     <SecondNav />
 
     <div class="container mt-4">
@@ -44,6 +109,7 @@
                         <path d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0z"/>
                       </svg>
                       <h5 class="card-title">Special title treatment</h5>
+
                       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                       <!-- Badge counting how many threads connected here -->
                       <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -55,11 +121,9 @@
                   </div>
                 </div>
 
-
               
             </div>
         </div>
-
 
     </main>
     
@@ -78,5 +142,11 @@ export default {
     Link,
     SecondNav,
   },
+
+    props: {
+    defaultCategories: Array,
+    createdCategories: Array,
+  },
+
 }
 </script>

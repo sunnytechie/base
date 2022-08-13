@@ -5,15 +5,13 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StructureController;
 
-Route::get('/', function () {
-    return Inertia::render('Base/Index');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Base/Index');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//HomePage Route
+Route::get('/', [HomeController::class, 'index'])->name('home')->middleware(['auth', 'verified']);
+Route::get('/select/{id}/base', [HomeController::class, 'selectIndex'])->name('select.index')->middleware(['auth', 'verified']);
+Route::get('/dashboard', [HomeController::class, 'index'])->name('home.dashboard')->middleware(['auth', 'verified']);
 
 //setting routes for the settings page in category controller
 Route::get('/settings', [CategoryController::class, 'index'])->name('settings')->middleware(['auth', 'verified']);

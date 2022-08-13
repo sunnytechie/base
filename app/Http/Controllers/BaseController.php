@@ -15,7 +15,7 @@ class BaseController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Base/Index');
     }
 
     /**
@@ -25,7 +25,7 @@ class BaseController extends Controller
      */
     public function create(Request $request)
     {
-        return Inertia::render('Base.New');
+        return Inertia::render('Base/New');
     }
 
     /**

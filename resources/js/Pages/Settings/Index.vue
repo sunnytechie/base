@@ -1,6 +1,6 @@
 <template>
      <breeze-authenticated-layout>
-   
+    <SecondNav />
 
     <div class="container mt-4">
         <section class="header d-flex justify-content-between">
@@ -140,16 +140,17 @@ import { Head, Link, useForm } from '@inertiajs/inertia-vue3'
 import { Inertia } from '@inertiajs/inertia'
 import Version from '../Shared/Version.vue'
 import IconList from '../Shared/Icon.vue'
+import SecondNav from '../Shared/Nav2.vue'
 
-
-    export default {
-        components: {
-    BreezeAuthenticatedLayout,
-    Head,
-    Link,
-    Version,
-    IconList,
-},
+export default {
+    components: {
+        BreezeAuthenticatedLayout,
+        Head,
+        Link,
+        Version,
+        IconList,
+        SecondNav,
+    },
 
         setup() {
             let form = useForm({

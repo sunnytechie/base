@@ -2,9 +2,10 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Http\Request;
 use Inertia\Middleware;
+use App\Models\Category;
 use Tightenco\Ziggy\Ziggy;
+use Illuminate\Http\Request;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -46,6 +47,14 @@ class HandleInertiaRequests extends Middleware
                     'success' => session()->get('success'),
                     'error' => session()->get('error'),
                 ];
+            },
+            //defaultCategories Category::where('type', 'Default')->get(),
+            'defaultCategories' => function () {
+                return Category::where('type', 'Default')->get();
+            },
+            //createdCategories Category::where('type', 'Created')->get(),
+            'createdCategories' => function () {
+                return Category::where('type', 'Created')->get();
             },
         ]);
     }
