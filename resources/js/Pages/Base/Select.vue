@@ -101,7 +101,7 @@
             <div class="row">
 
                 <div class="col-md-2 col-6 my-2" v-for="base in base" :key="base.id">
-                  <Link :href="route('base.show', base.id)">
+                    <Link :href="route('base.show', base.id)">
                     <div class="card" style="background: #1E293B; min-height: 200px;">
                       
                       <div class="card-body">
