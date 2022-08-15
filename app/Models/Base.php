@@ -84,4 +84,10 @@ class Base extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    //has many threads
+    public function threads()
+    {
+        return $this->hasMany('App\Models\Thread');
+    }
 }

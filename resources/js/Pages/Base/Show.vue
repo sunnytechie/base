@@ -1,5 +1,5 @@
 <template>
-    <Head title="Dashboard" />
+    <Head :title="$props.base.name" />
     
     <breeze-authenticated-layout>
     <SecondNav />
@@ -38,15 +38,159 @@
             <div class="col-md-8">
                 <div class="card shadow" style="background-color: #1E293B;">
                     
-                            <div class="card-header d-flex justify-content-between">
-                                <div>Create new document</div>
+                            <div class="card-header d-flex justify-content-end">
                                 <div>
-                                    <button class="btn btn-success btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Publish new</button>
+                                    <Link href="/structure/select" class="btn btn-success btn-sm" type="button">Publish new</Link>
                                 </div>
                             </div>
 
                             <div class="card-body">
-                                Details here well organized and easy to use.
+                                <div class="default">
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i :class="$props.base.category.icon" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.name }}</h5>
+                                    </div>
+                                
+                                    <p>{{  $props.base.description  }}</p>
+                                </div>
+
+                                <div v-if="$props.base.event_name" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.event_name }}</h5>
+                                    </div>
+
+                                    <div>{{ $props.event_date }}</div>
+                                    <div>{{ $props.base.event_location }}</div>
+                                
+                                    <p>{{ $props.base.event_description }}</p>
+
+                                    <img v-if="$props.base.event_image" class="img-fluid" :src="$props.base.event_image" alt="">
+                                </div>
+
+                                <div v-if="$props.base.website_name" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.website_name }}</h5>
+                                    </div>
+
+                                    <div>{{ $props.website_url }}</div>
+                                    <div><img v-if="$props.base.website_image" class="img-fluid" :src="$props.base.website_image" alt=""></div>
+                                
+                                    <p>{{ $props.base.website_username }}</p>
+                                    <p>{{ $props.base.website_passcode }}</p>
+                                    <p>{{ $props.base.website_email }}</p>
+                                    <p>{{ $props.base.website_cpanel_url }}</p>
+                                    <p>{{ $props.base.website_cpanel_username }}</p>
+                                    <p>{{ $props.base.website_cpanel_passcode }}</p>
+                                    <p>{{ $props.base.website_cpanel_email }}</p>
+                                    <p>{{ $props.base.website_cpanel_hostname }}</p>
+                                    <p>{{ $props.base.website_cpanel_hostpasscode }}</p>
+                                    <p>{{ $props.base.website_cpanel_hostemail }}</p>
+                                    <p>{{ $props.base.website_cpanel_username }}</p>
+                                    <p>{{ $props.base.website_cpanel_passcode }}</p>
+                                </div>
+
+                                <div v-if="$props.base.map_location" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.map_location }}</h5>
+                                    </div>
+                                
+                                    <p>{{ $props.base.map_description }}</p>
+
+                                    <img v-if="$props.base.map_image" class="img-fluid" :src="$props.base.map_image" alt="">
+                                </div>
+
+                                <div v-if="$props.base.social_name" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.social_name }}</h5>
+                                    </div>
+                                
+                                    <p>{{ $props.base.social_url }}</p>
+                                    <p>{{ $props.base.social_username }}</p>
+                                    <p>{{ $props.base.social_passcode }}</p>
+                                    <p>{{ $props.base.social_email }}</p>
+                                </div>
+
+                                <div v-if="$props.base.task_name" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.task_name }}</h5>
+                                    </div>
+
+                                    <p>{{ $props.base.task_description }}</p>
+
+                                    <div>{{ $props.task_url }}</div>
+                                
+                                    <img v-if="$props.base.task_image" class="img-fluid" :src="$props.base.task_image" alt="">
+                                </div>
+
+                                <div v-if="$props.base.password_username" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.password_username }}</h5>
+                                    </div>
+
+                                    <div>{{ $props.password_passcode }}</div>
+                                    <div>{{ $props.base.password_email }}</div>
+                                
+                                    <p>{{ $props.base.password_description }}</p>
+                                </div>
+
+                                <div v-if="$props.base.bank_name" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.bank_name }}</h5>
+                                    </div>
+                                
+                                    <p>{{ $props.base.bank_description }}</p>
+
+                                    <div>{{ $props.bank_acct_name }}</div>
+                                    <div>{{ $props.base.bank_acct_number }}</div>
+                                    <div>{{ $props.base.bank_acct_type }}</div>
+                                    <div>{{ $props.base.bank_acct_pin }}</div>
+                                </div>
+
+                                <div v-if="$props.base.resources_name" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.resources_name }}</h5>
+                                    </div>
+
+                                    <p>{{ $props.base.event_description }}</p>
+                                </div>
+
+                                <div v-if="$props.base.report_name" class="mt-5">
+                                <hr class="bg-success border-1 border-top border-success">
+
+                                    <div class="d-flex">
+                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
+                                        <h5>{{ $props.base.report_name }}</h5>
+                                    </div>
+
+                                    <p>{{ $props.base.report_description }}</p>
+
+                                    <img v-if="$props.base.report_image" class="img-fluid" :src="$props.base.report_image" alt="">
+                                </div>
+                                
                             </div>
                 </div>
             </div>
@@ -108,6 +252,7 @@ export default {
 
   props: {
     base: Object,
+    event_date: Object,
   },
 }
 </script>

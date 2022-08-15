@@ -105,7 +105,7 @@
                     <div class="card" style="background: #1E293B; min-height: 200px;">
                       
                       <div class="card-body">
-                        <i :class="base.category.icon"  style="float: right; color:rgb(255, 196, 0)"></i>
+                        <i :class="base.category.icon" style="float: right; color:rgb(255, 196, 0)"></i>
                         <h5 class="card-title">{{ base.name }}</h5>
                         <p class="card-text p-0">{{ base.description.substr(0, 120) + '...' }}</p>
                         <!-- Badge counting how many threads connected here -->

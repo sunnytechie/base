@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Base;
 use Inertia\Inertia;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class BaseController extends Controller
@@ -239,10 +241,16 @@ class BaseController extends Controller
     {
         $base = Base::find($id);
         $base_id = $base->id;
+        //event date in diff human readable format
+        $event_date = Carbon::parse($base->event_date)->diffForHumans();
+        //event time in diff human readable format
+        //$event_time = Carbon::parse($base->event_time)->diffForHumans();
+        //dd($event_time);
 
         //inertia render base with base_id
         return Inertia::render('Base/Show', [
-            'base' => Base::find($base_id),
+            'base' => Base::with('category')->find($base_id),
+            'event_date' => $event_date,
         ]);
     }
 
