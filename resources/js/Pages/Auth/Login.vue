@@ -10,32 +10,31 @@
 
 
 
-      <div class="col-md-6" style="height: 100vh; background: #fff;">
+      <div class="col-md-6" style="height: 100vh;">
           
-        <div class="align-middle p-5" style="margin-top: 100px;">
+        <div class="align-middle margin-top-off-on-mobile">
           <div class="text-center">
-              <Link href="/">
-                <breeze-application-logo width="82" />
-              </Link>
+              <breeze-validation-errors class="mb-3" />
           </div>
-          <breeze-validation-errors class="mb-3" />
+          
 
           <div v-if="status" class="alert alert-success mb-3 rounded-0" role="alert">
             {{ status }}
           </div>
 
-          <form @submit.prevent="submit">
+          <form @submit.prevent="submit" class="p-4 shadow max-with-350" style="background: #1E293B; border-radius: 10px;" autocomplete="false">
+
             <div class="mb-3">
-              <breeze-label for="email" value="Email" style="color: #000" />
-              <input class="form-control" style="padding: 6px 8px; border-radius: 0; font-size: 12px; background-color: #ddd; color: #000;" id="email" type="email" v-model="form.email" required autofocus />
+              <breeze-label for="email" value="Email" style="color: #ddd" />
+              <input class="form-control email" style="padding: 6px 8px; border-radius: 5px; font-size: 14px; background: #1B2535;" type="email" v-model="form.email" required autofocus />
             </div>
 
             <div class="mb-3">
-              <breeze-label for="password" value="Password" style="color: #000" />
-              <input class="form-control" style="padding: 6px 8px; border-radius: 0; font-size: 12px; background-color: #ddd; color: #000;" id="password" type="password" v-model="form.password" required autocomplete="current-password" />
+              <breeze-label for="password" value="Password" style="color: #ddd" />
+              <input class="form-control password" style="padding: 6px 8px; border-radius: 5px; font-size: 14px; background: #1B2535;" type="password" v-model="form.password" required autocomplete="current-password" />
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <div class="form-check">
                 <breeze-checkbox id="remember_me" name="remember" v-model:checked="form.remember" />
 
@@ -43,21 +42,25 @@
                   Remember Me
                 </label>
               </div>
-            </div>
+            </div> -->
 
-            <div class="mb-0">
-              <div class="d-flex justify-content-end align-items-baseline">
-                <Link v-if="canResetPassword" :href="route('password.request')" class="text-muted me-3">
-                  Forgot your password?
-                </Link>
-
-                <breeze-button class="ms-4" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div class="mb-3">
+              <breeze-button style="background: #2563EB; color:#ddd" class="btn-primary w-100" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
                   <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
                     <span class="visually-hidden">Loading...</span>
                   </div>
                   
                   Log in
                 </breeze-button>
+            </div>
+
+            <div class="mb-3">
+              <div class="d-flex justify-content-center">
+                <Link v-if="canResetPassword" :href="route('password.request')" class="text-muted me-3" style="color: #2563EB">
+                  Forgot your password?
+                </Link>
+
+                
               </div>
             </div>
           </form>
@@ -130,18 +133,45 @@ export default {
     background: #212B3E;
   }
 
-  #email, #password {
+  .email, .password {
     border: none;
     border-radius: 4px;
-    background: #f9fafc;
+    background: #1B2535 !important;
+    color: #ddd !important;
     padding-right: 28px;
   }
 
-  #email:focus, #password:focus {  background: transparent; color: #fff; }
+  .email:focus, .password:focus {  background: #212B3E; color: rgb(223, 210, 210); }
 
   @media screen and (max-width: 426px) {
     .hide-on-mobile {
       display: none;
   }
+  
   }
+
+  .margin-top-off-on-mobile {
+    margin-top: 30px;
+  }
+
+  @media screen and (min-width: 426px) {
+    .margin-top-off-on-mobile {
+    margin-top: 100px;
+  }
+
+  .max-with-350 {
+    max-width: 350px;
+  }
+  
+  
+  }
+
+/* change email and password autofill background */
+
+   
+    .email:-webkit-autofill, .password:-webkit-autofill {
+      background: #1B2535 !important;
+    }
+  
+
 </style>
