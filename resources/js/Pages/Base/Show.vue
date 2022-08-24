@@ -38,31 +38,30 @@
             <div class="col-md-8">
                 <div class="card shadow" style="background-color: #1E293B;">
                     
-                            <div class="card-header d-flex justify-content-between">
+                            <div class="d-flex justify-content-between pt-3 px-3">
                                <h5>
                                     {{ $props.base.category.title }}
                                </h5>
                                 <div>
-                                    <Link href="/structure/select" class="btn btn-success btn-sm" type="button">Publish new</Link>
+                                    <Link href="/" class="btn btn-success btn-sm" type="button" style="color: #fff"><i class="bi bi-pencil-square" style="font-size: 12px"></i>Edit</Link>
                                 </div>
                             </div>
 
                             <div class="card-body">
-                                <div class="default">
+                                <div class="default shadow-sm p-3" style="background: #1B2434">
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i :class="$props.base.category.icon" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i :class="$props.base.category.icon" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.name }}</h5>
                                     </div>
                                 
-                                    <p>{{  $props.base.description  }}</p>
+                                    <p v-html="$props.base.description"></p>
                                 </div>
 
-                                <div v-if="$props.base.event_name" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.event_name" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                                
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.event_name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.event_name }}</h5>
                                     </div>
 
                                     <div>{{ $props.event_date }}</div>
@@ -73,12 +72,11 @@
                                     <img v-if="$props.base.event_image" class="img-fluid" :src="$props.base.event_image" alt="">
                                 </div>
 
-                                <div v-if="$props.base.website_name" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.website_name" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                                
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.website_name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.website_name }}</h5>
                                     </div>
 
                                     <div>{{ $props.website_url }}</div>
@@ -98,12 +96,11 @@
                                     <p>{{ $props.base.website_cpanel_passcode }}</p>
                                 </div>
 
-                                <div v-if="$props.base.map_location" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.map_location" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                           
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.map_location }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.map_location }}</h5>
                                     </div>
                                 
                                     <p>{{ $props.base.map_description }}</p>
@@ -111,12 +108,11 @@
                                     <img v-if="$props.base.map_image" class="img-fluid" :src="$props.base.map_image" alt="">
                                 </div>
 
-                                <div v-if="$props.base.social_name" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.social_name" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                                
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.social_name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.social_name }}</h5>
                                     </div>
                                 
                                     <p>{{ $props.base.social_url }}</p>
@@ -125,12 +121,11 @@
                                     <p>{{ $props.base.social_email }}</p>
                                 </div>
 
-                                <div v-if="$props.base.task_name" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.task_name" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                               
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.task_name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.task_name }}</h5>
                                     </div>
 
                                     <p>{{ $props.base.task_description }}</p>
@@ -140,12 +135,11 @@
                                     <img v-if="$props.base.task_image" class="img-fluid" :src="$props.base.task_image" alt="">
                                 </div>
 
-                                <div v-if="$props.base.password_username" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.password_username" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                                
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.password_username }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.password_username }}</h5>
                                     </div>
 
                                     <div>{{ $props.password_passcode }}</div>
@@ -154,12 +148,11 @@
                                     <p>{{ $props.base.password_description }}</p>
                                 </div>
 
-                                <div v-if="$props.base.bank_name" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.bank_name" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                             
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.bank_name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.bank_name }}</h5>
                                     </div>
                                 
                                     <p>{{ $props.base.bank_description }}</p>
@@ -170,23 +163,21 @@
                                     <div>{{ $props.base.bank_acct_pin }}</div>
                                 </div>
 
-                                <div v-if="$props.base.resources_name" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.resources_name" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                               
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.resources_name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.resources_name }}</h5>
                                     </div>
 
                                     <p>{{ $props.base.event_description }}</p>
                                 </div>
 
-                                <div v-if="$props.base.report_name" class="mt-5">
-                                <hr class="bg-success border-1 border-top border-success">
-
+                                <div v-if="$props.base.report_name" class="mt-4 shadow-sm p-3" style="background: #1B2434">
+                                
                                     <div class="d-flex">
-                                        <span style="margin-right: 2px; margin-top: -3px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0)"></i></span>
-                                        <h5>{{ $props.base.report_name }}</h5>
+                                        <span style="margin-right: 1px; margin-top: -5px;"><i class="bi bi-calendar4-event" style="color:rgb(255, 196, 0); font-size: 12px;"></i></span>
+                                        <h5 style="font-size: 13px">{{ $props.base.report_name }}</h5>
                                     </div>
 
                                     <p>{{ $props.base.report_description }}</p>

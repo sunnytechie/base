@@ -73,8 +73,8 @@
                             </div>
 
                             <div style="height: 24px; margin-top: -2px">
-                                <div style="height: 10px; font-size: 12px; margin-bottom: 4px; font-weight: 500;">Name</div>
-                                <div style="height: 10px; font-size: 12px; font-weight: 200; color: #6a7a97;">Auth Level</div>
+                                <div style="height: 10px; font-size: 12px; margin-bottom: 4px; font-weight: 500;">{{ $page.props.auth.user.name }}</div>
+                                <div style="height: 10px; font-size: 12px; font-weight: 400; color: #6a7a97;">{{ $page.props.auth.user.email }}</div>
                             </div>
                         </div>
                     </a>

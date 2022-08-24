@@ -17,7 +17,11 @@ class BaseController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Base/Index');
+        $base = Base::with('category')->OrderBy('id', 'desc')->get();
+        //Inertia render
+        return Inertia::render('Base/Index', [
+            'base' => $base,
+        ]);
     }
 
     /**
@@ -215,20 +219,13 @@ class BaseController extends Controller
         if ($request->has('report_url')) {
             $base->report_url = $request->report_url;
         }
-
         //save the base
         $base->save();
-
-        //get the base id
-        $base_id = $base->id;
-        
-        //Inertia render base with base_id
-        return Inertia::render('Base/Show', [
-            'base' => Base::find($base_id),
+        $base = Base::with('category')->OrderBy('id', 'desc')->get();
+        //Inertia render
+        return Inertia::render('Base/Index', [
+            'base' => $base,
         ]);
-
-        //return redirect('/base/' . $base_id);
-        //return inertia('Base/Show', compact('base'));
     }
 
     /**

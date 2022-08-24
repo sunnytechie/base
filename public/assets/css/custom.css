@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+    body {
+        font-family: 'Lato', sans-serif;
+    }
+
+    p {
+        font-family: 'Lato', sans-serif;
+    }
+    span {
+        font-family: 'Lato', sans-serif;
+    }
+
       nav .dropdown-menu {
         width: 150px;
       }
@@ -28,7 +41,6 @@
         .navbar-nav .dropdown-menu {
             background: #1E293B;
             border: 0.1rem solid #29374d;
-            left: -55px;
             margin-top: 0.5rem;
         }
 
